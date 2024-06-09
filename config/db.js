@@ -1,11 +1,11 @@
 import { createPool } from 'mysql2/promise';
 
 const pool = createPool({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'demousuarios',
-    port: 33065,
+    host: 'mysql-nodetpf.alwaysdata.net',
+    user: 'nodetpf',
+    password: 'MGG777171',
+    database: 'nodetpf_demousuarios',
+    port: 3306,
     waitForConnections: true,
     connectionLimit: 5
 });

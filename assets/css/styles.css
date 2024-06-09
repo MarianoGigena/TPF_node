@@ -1,5 +1,5 @@
 body {
-    background-image: url(./fondo.webp);
+    background-image: url(./../../fondo.webp);
     background-size: cover;
     background-position: center;
 }
