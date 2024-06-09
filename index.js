@@ -16,9 +16,9 @@ app.use(express.static(path.join(__dirname)));
 
 
 // Ruta para servir la página del formulario
-app.get('/', (req, res) => {
+/* app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
-});
+}); */
 
 // Define routes here
 app.get('/users', async (req, res) => {
@@ -160,7 +160,7 @@ app.get('/users/update/:id', async (req, res) => {
         <html>
         <head>
           <title>Editar Usuario</title>
-          <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+          <link rel="stylesheet" type="text/css" href="./assets/css/styles.css">
         </head>
         <body>
         <div id="registro">
