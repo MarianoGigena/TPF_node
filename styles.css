@@ -1,0 +1,84 @@
+body {
+    background-image: url(./fondo.webp);
+    background-size: cover;
+    background-position: center;
+}
+
+#registro {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    background: linear-gradient(to bottom, transparent, violet, transparent);
+
+
+    color: white;
+
+
+
+}
+
+#registro h2 {
+    font-size: 24px;
+    color: white;
+    margin: auto;
+}
+
+#registro form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+#registro form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#registro form input,
+#registro form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+}
+
+#registro form button {
+    width: 25%;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.5s ease;
+    margin: auto auto;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+#registro form button:hover {
+    background-color: #0056b3;
+    margin: 0 auto;
+
+}
+
+#registro form input[type="checkbox"] {
+    width: auto;
+}
+
+#registro form input[type="file"] {
+    width: auto;
+    padding: 7px;
+}
+
+@media screen and (max-width: 600px) {
+    #registro form {
+        grid-template-columns: 1fr;
+    }
+}

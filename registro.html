@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registro</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+
+<body>
+    <div id="registro">
+        <h2>Formulario de Registro de Usuarios</h2>
+        <form id="registro form" action="/users" method="POST">
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" id="nombre" name="nombre" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="password">Contraseña:</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <label for="rol">Rol:</label><br>
+            <input type="text" id="rol" name="rol" required><br><br>
+            <button type="submit">Registrar</button>
+            <p><button><a href="/users">listado</a></button></p>
+        </form>
+    </div>
+
+</body>
+
+</html>

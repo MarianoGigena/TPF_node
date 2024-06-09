@@ -1,0 +1,62 @@
+body {
+    background-image: url(./fondo.webp);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+
+#titulo_tabla {
+    text-align: center;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+    background: linear-gradient(to bottom, transparent, violet, transparent);
+    margin: auto;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    color: black;
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #888484;
+}
+
+tr:nth-child(odd) {
+    background-color: #5f5e5e;
+}
+
+button {
+    width: 100px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+button {
+    background-color: #8e7eea;
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #eaedea;
+}
+
+button.center {
+    display: block;
+    margin: 0 auto;
+}
