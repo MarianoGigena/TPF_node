@@ -160,7 +160,7 @@ app.get('/users/update/:id', async (req, res) => {
         <html>
         <head>
           <title>Editar Usuario</title>
-          <link rel="stylesheet" type="text/css" href="/styles.css">
+          <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
         </head>
         <body>
         <div id="registro">
