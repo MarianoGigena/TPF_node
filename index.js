@@ -4,7 +4,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 
 const app = express();
-
+const port = process.env.PORT || 3000;
 // middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -255,6 +255,6 @@ app.get('/users/borrar/:id', async (req, res) => {
 
 });
 
-app.listen(3000, () => {
-    console.log('Server is running on port 3000')
-})
+app.listen(port, () => {
+    console.log(`Servidor escuchando en http://localhost:${port}`);
+});
