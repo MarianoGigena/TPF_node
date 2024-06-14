@@ -258,3 +258,4 @@ app.get('/users/borrar/:id', async (req, res) => {
 app.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`);
 });
+export default app;
