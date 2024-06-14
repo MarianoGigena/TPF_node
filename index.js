@@ -30,7 +30,7 @@ app.get('/users', async (req, res) => {
         // console.log("FIELDS -->", fields)
         connection.release();
         //res.json(rows);
-        res.json(rows);
+        //res.json(rows);
         // Genera la tabla HTML
         let table = `
         <html>
