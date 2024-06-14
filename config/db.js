@@ -1,10 +1,10 @@
 import { createPool } from 'mysql2/promise';
 
 const pool = createPool({
-    host: 'mysql-nodetpf.alwaysdata.net',
-    user: 'nodetpf',
-    password: 'MGG777171',
-    database: 'nodetpf_demousuarios',
+    host: 'b3zynustzghx1t94uama-mysql.services.clever-cloud.com',
+    user: 'uyy5ny5uxvgfphu0',
+    password: 'IShvMQ2znUuPv8l0PFot',
+    database: 'b3zynustzghx1t94uama',
     port: 3306,
     waitForConnections: true,
     connectionLimit: 5
