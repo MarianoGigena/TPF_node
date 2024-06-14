@@ -29,7 +29,8 @@ app.get('/users', async (req, res) => {
         const [rows, fields] = await connection.query(sql);
         // console.log("FIELDS -->", fields)
         connection.release();
-        // res.json(rows);
+        //res.json(rows);
+        res.json(rows);
         // Genera la tabla HTML
         let table = `
         <html>
