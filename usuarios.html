@@ -17,6 +17,7 @@
                 <th>ID</th>
                 <th>Nombre</th>
                 <th>Email</th>
+                <th>Password</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -24,6 +25,10 @@
             <!-- Las filas de usuarios se cargarán aquí -->
         </tbody>
     </table>
+    <button><a href="/registro.html">volver al formulario</a></button>
+    <button><a href="/index.html">volver al inicio</a></button>
+
+
     <script>
         async function loadUsers() {
             try {
@@ -42,7 +47,6 @@
               <a href="/users/borrar/${user.id}">Eliminar</a>
               <a href="/users/update/${user.id}">Editar</a>
             </td>
-            <button><a href="/registro.html">volver al formulario</a></button>
           `;
                     tbody.appendChild(row);
                 });
