@@ -35,6 +35,10 @@ app.get('/api/users', async (req, res) => {
     }
 });
 
+// Ruta para servir la página de la lista de usuarios
+app.get('/users2', (req, res) => {
+    res.sendFile(path.join(__dirname, '../usuarios.html'));
+});
 //20240625
 
 // Define routes here
