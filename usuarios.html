@@ -37,10 +37,12 @@
             <td>${user.id}</td>
             <td>${user.nombre}</td>
             <td>${user.email}</td>
+            <td>${user.password}</td>
             <td>
-              <a href="/delete-user/${user.id}">Eliminar</a>
-              <a href="/edit-user/${user.id}">Editar</a>
+              <a href="/users/borrar/${user.id}">Eliminar</a>
+              <a href="/users/update/${user.id}">Editar</a>
             </td>
+            <button><a href="/registro.html">volver al formulario</a></button>
           `;
                     tbody.appendChild(row);
                 });
