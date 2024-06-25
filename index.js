@@ -36,13 +36,13 @@ app.get('/api/users', async (req, res) => {
 });
 
 // Ruta para servir la página de la lista de usuarios
-app.get('/users2', (req, res) => {
+app.get('/users', (req, res) => {//cambie de users2 a users
     res.sendFile(path.join(__dirname, 'usuarios.html'));
 });
 //20240625
 
-// Define routes here
-app.get('/users', async (req, res) => {
+// Define routes here 
+app.get('/users2', async (req, res) => { //cambie de /users a /users2
 
     try {
         const connection = await pool.getConnection();
