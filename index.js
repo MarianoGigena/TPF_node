@@ -19,6 +19,23 @@ app.use(express.static(path.join(__dirname)));
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
+//20240625
+
+// Ruta para obtener los datos de los usuarios en formato JSON
+app.get('/api/users', async (req, res) => {
+    try {
+        const connection = await pool.getConnection();
+        const sql = 'SELECT * FROM usuarios';
+        const [rows, fields] = await connection.query(sql);
+        connection.release();
+        res.json(rows);
+    } catch (err) {
+        console.error('Hubo un error al consultar la base de datos:', err);
+        res.status(500).send('Hubo un error al consultar la base de datos');
+    }
+});
+
+//20240625
 
 // Define routes here
 app.get('/users', async (req, res) => {

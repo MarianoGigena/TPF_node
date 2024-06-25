@@ -1,0 +1,56 @@
+<!-- public/usuarios.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Usuarios</title>
+    <link rel="stylesheet" href="/tabla.css">
+</head>
+
+<body>
+    <h1>Lista de Usuarios</h1>
+    <table id="users-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las filas de usuarios se cargarán aquí -->
+        </tbody>
+    </table>
+    <script>
+        async function loadUsers() {
+            try {
+                const response = await fetch('/api/users');
+                const users = await response.json();
+                const tbody = document.querySelector('#users-table tbody');
+
+                users.forEach(user => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+            <td>${user.id}</td>
+            <td>${user.nombre}</td>
+            <td>${user.email}</td>
+            <td>
+              <a href="/delete-user/${user.id}">Eliminar</a>
+              <a href="/edit-user/${user.id}">Editar</a>
+            </td>
+          `;
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error al cargar los usuarios:', error);
+            }
+        }
+
+        window.onload = loadUsers;
+    </script>
+</body>
+
+</html>
