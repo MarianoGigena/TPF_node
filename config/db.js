@@ -4,7 +4,7 @@ dotenv.config();
 const pool = createPool({
     host: 'b3zynustzghx1t94uama-mysql.services.clever-cloud.com',
     user: 'uyy5ny5uxvgfphu0',
-    password: process.env.SECRET_KEY,
+    password: SECRET_KEY,
     database: 'b3zynustzghx1t94uama',
     port: 3306,
     waitForConnections: true,
