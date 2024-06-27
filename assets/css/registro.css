@@ -1,0 +1,15 @@
+#registro {
+    margin-top: 100px;
+
+    padding: 10px !important;
+
+    max-width: 800px;
+
+
+
+}
+
+#registro form {
+    width: 600px;
+    grid-template-columns: 1fr;
+}

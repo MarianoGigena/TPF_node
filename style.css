@@ -100,12 +100,14 @@ body {
     display: flex;
     justify-content: center;
 }
+
 #check {
     display: none;
     justify-content: center;
     align-items: left;
     margin-top: 20px;
 }
+
 .checkbtn {
     font-size: 40px;
     color: #fff;
@@ -750,7 +752,7 @@ body {
 }
 
 #registro form input,
-#registro form select{
+#registro form select {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -760,7 +762,7 @@ body {
 }
 
 #registro form button {
-    width: 25%;
+    width: 100%;
     background-color: #007bff;
     color: #fff;
     font-size: 20px;
@@ -915,21 +917,24 @@ img {
         font-size: 4vw;
     }
 }
+
 @media (max-width: 800px) {
     .checkbtn {
         display: block;
     }
+
     #header {
         background-image: linear-gradient(to bottom, #1f1175, #29189b8b, #1e117500);
         color: #fff;
-        padding: 0.2rem 0;  
+        padding: 0.2rem 0;
     }
-    
+
     #info {
         justify-content: right;
     }
+
     .lista-horizontal {
-        
+
         display: none;
         margin-left: 0;
         color: #fff;
@@ -940,93 +945,110 @@ img {
         background-color: linear-gradient(to bottom, #1e1175f5, #29189bcb, #1e1175ec);
         padding: 15px;
         text-align: center;
-        
-       
+
+
     }
-   
-    
+
+
     .lista-horizontal a:hover {
         background-color: #007bff;
         color: #1a1919;
     }
-    #check:checked ~ #info .lista-horizontal {
+
+    #check:checked~#info .lista-horizontal {
         display: block;
-        
+
     }
+
     .lista-horizontal li {
         display: block;
         background-color: #1e1175dc;
         padding: 5px;
         border-radius: 3rem;
-        
+
     }
-    .carousel-item img{
+
+    .carousel-item img {
         height: 310px !important;
         justify-content: center;
     }
-    #historia h2{
+
+    #historia h2 {
         font-size: 20px;
         width: 100%;
-    
+
     }
+
     .Videos-Titulo {
         font-size: 20px;
         width: 100%;
     }
+
     .container h2 {
         font-size: 20px;
     }
+
     .videos-section {
         padding: 20px 0;
         align-items: center;
     }
+
     .container {
-        
+
         flex-direction: column;
         align-items: center;
 
     }
+
     .video-main {
         height: 300px;
         margin-right: 0;
         align-items: center !important;
     }
+
     .video .video-info {
         display: none;
     }
-    @keyframes slide-animation{
+
+    @keyframes slide-animation {
         0% {
             transform: translateY(0);
         }
+
         0% {
             transform: translateY(0);
         }
     }
-   .separador-ias{
-    height: auto;
-    width: 100%;
-    align-items: center;
-   }
-   .separador-ias h3{
-    font-size: 13px !important;
-   }
-    .ia-container img{
-     height: 150px;
-     width: 250px;
-     margin-bottom: 10px;
-     object-fit: fill;
-     border-radius: 1rem;
-     transition: transform 0.3s ease;
-     transform-origin: center center;
+
+    .separador-ias {
+        height: auto;
+        width: 100%;
+        align-items: center;
     }
+
+    .separador-ias h3 {
+        font-size: 13px !important;
+    }
+
+    .ia-container img {
+        height: 150px;
+        width: 250px;
+        margin-bottom: 10px;
+        object-fit: fill;
+        border-radius: 1rem;
+        transition: transform 0.3s ease;
+        transform-origin: center center;
+    }
+
     .ia-container {
         grid-template-columns: repeat(1, 1fr) !important;
     }
-    .carousel-caption h5 .carousel-caption p{
+
+    .carousel-caption h5 .carousel-caption p {
         display: none !important;
         font-size: 20px !important;
         width: 100% !important;
-        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -1034,11 +1056,13 @@ img {
     body {
         overflow-x: hidden;
     }
+
     .svglogIA-container {
         padding-top: 40px;
         padding-bottom: 40px;
         text-align: center;
     }
+
     .logos-slide {
         display: inline-block;
         animation: slide 35s infinite linear;
@@ -1048,17 +1072,19 @@ img {
     .checkbtn {
         display: block;
     }
+
     #header {
         background-image: linear-gradient(to bottom, #1f1175, #29189b8b, #1e117500);
         color: #fff;
-        padding: 0.2rem 0;  
+        padding: 0.2rem 0;
     }
-    
+
     #info {
         justify-content: right;
     }
+
     .lista-horizontal {
-        
+
         display: none;
         margin-left: 0;
         color: #fff;
@@ -1069,72 +1095,84 @@ img {
         background-color: linear-gradient(to bottom, #1e1175f5, #29189bcb, #1e1175ec);
         padding: 15px;
         text-align: center;
-        
-       
+
+
     }
-   
-    
+
+
     .lista-horizontal a:hover {
         background-color: #007bff;
         color: #1a1919;
     }
-    #check:checked ~ #info .lista-horizontal {
+
+    #check:checked~#info .lista-horizontal {
         display: block;
-        
+
     }
+
     .lista-horizontal li {
         display: block;
         background-color: #1e1175dc;
         padding: 5px;
         border-radius: 3rem;
-        
+
     }
 
-    
-    .carousel-item img{
-        height: 320px ;
+
+    .carousel-item img {
+        height: 320px;
         justify-content: center;
     }
-    #historia h2{
+
+    #historia h2 {
         font-size: 20px;
         width: 100%;
-    
+
     }
+
     .Videos-Titulo {
         font-size: 20px;
         width: 100%;
     }
+
     .container h2 {
         font-size: 20px;
     }
+
     .videos-section {
         padding: 20px 0;
         grid-template-columns: repeat(1, 1fr) !important;
         flex-direction: column !important;
         align-items: center !important;
     }
+
     .container {
         grid-template-columns: repeat(1, 1fr) !important;
         flex-direction: column !important;
         align-items: center !important;
 
     }
+
     .video-main {
         height: 300px !important;
         margin-right: 0 !important;
         align-items: center !important;
     }
+
     .video .video-info {
         display: none;
     }
-    @keyframes slide-animation{
+
+    @keyframes slide-animation {
         0% {
             transform: translateY(0);
         }
+
         0% {
             transform: translateY(0);
         }
     }
+
     .videos-container {
         display: flex;
         justify-content: flex-end;
@@ -1144,6 +1182,7 @@ img {
         position: relative;
         left: 335px;
     }
+
     .video-slider {
         overflow: auto;
         position: relative;
@@ -1164,62 +1203,70 @@ img {
         position: relative;
         left: 390px;
     }
-   .separador-ias{
-    height: auto;
-    width: 100%;
-    align-items: center;
-   }
-   .separador-ias h3{
-    position: relative;
-    font-size: 9px !important;
-    left: 2px;
-   }
-    .ia-container img{
-     height: 150px;
-     width: 250px;
-     margin-bottom: 10px;
-     object-fit: fill;
-     border-radius: 1rem;
-     transition: transform 0.3s ease;
-     transform-origin: center center;
+
+    .separador-ias {
+        height: auto;
+        width: 100%;
+        align-items: center;
     }
+
+    .separador-ias h3 {
+        position: relative;
+        font-size: 9px !important;
+        left: 2px;
+    }
+
+    .ia-container img {
+        height: 150px;
+        width: 250px;
+        margin-bottom: 10px;
+        object-fit: fill;
+        border-radius: 1rem;
+        transition: transform 0.3s ease;
+        transform-origin: center center;
+    }
+
     .ia-container {
         grid-template-columns: repeat(1, 1fr) !important;
         padding: 3px !important;
     }
+
     #cursos {
         margin: 2rem !important;
         padding: 60px !important;
         height: 300px !important;
 
     }
-    #cursos h2 p{
+
+    #cursos h2 p {
         justify-content: center;
         font-size: 15px !important;
         align-items: center;
     }
-    .carousel-caption h5 .carousel-caption p{
+
+    .carousel-caption h5 .carousel-caption p {
         display: none !important;
         font-size: 20px !important;
         width: 100% !important;
-        }
-        #cursos {
-            position: relative;
-            margin: 1rem !important;
-            padding: 15px !important;
-            max-width: 450px !important;
-            left: 365px;
-            
-        }
-    
-        #cursos h2 {
-            font-size: 15x !important;
-        }
-    
-        #cursos p {
-            font-size: 13px !important;
-        }
-    
+    }
+
+    #cursos {
+        position: relative;
+        margin: 1rem !important;
+        padding: 15px !important;
+        max-width: 450px !important;
+        left: 365px;
+
+    }
+
+    #cursos h2 {
+        font-size: 15x !important;
+    }
+
+    #cursos p {
+        font-size: 13px !important;
+    }
+
     #registro {
         position: relative;
         padding: 10px !important;
@@ -1227,6 +1274,7 @@ img {
         max-width: 400px;
         left: 400px;
     }
+
     #registro form button {
         width: 25%;
         background-color: #007bff;
@@ -1241,16 +1289,19 @@ img {
         font-weight: bold;
     }
 }
+
 @media (max-width: 576px) {
 
     body {
         overflow-x: hidden;
     }
+
     .svglogIA-container {
         padding-top: 40px;
         padding-bottom: 40px;
         text-align: center;
     }
+
     .logos-slide {
         display: inline-block;
         animation: slide 35s infinite linear;
@@ -1260,17 +1311,19 @@ img {
     .checkbtn {
         display: block;
     }
+
     #header {
         background-image: linear-gradient(to bottom, #1f1175, #29189b8b, #1e117500);
         color: #fff;
-        padding: 0.2rem 0;  
+        padding: 0.2rem 0;
     }
-    
+
     #info {
         justify-content: right;
     }
+
     .lista-horizontal {
-        
+
         display: none;
         margin-left: 0;
         color: #fff;
@@ -1281,72 +1334,84 @@ img {
         background-color: linear-gradient(to bottom, #1e1175f5, #29189bcb, #1e1175ec);
         padding: 15px;
         text-align: center;
-        
-       
+
+
     }
-   
-    
+
+
     .lista-horizontal a:hover {
         background-color: #007bff;
         color: #1a1919;
     }
-    #check:checked ~ #info .lista-horizontal {
+
+    #check:checked~#info .lista-horizontal {
         display: block;
-        
+
     }
+
     .lista-horizontal li {
         display: block;
         background-color: #1e1175dc;
         padding: 5px;
         border-radius: 3rem;
-        
+
     }
 
-    
-    .carousel-item img{
-        height: 320px ;
+
+    .carousel-item img {
+        height: 320px;
         justify-content: center;
     }
-    #historia h2{
+
+    #historia h2 {
         font-size: 15px;
         width: 100%;
-    
+
     }
+
     .Videos-Titulo {
         font-size: 20px;
         width: 100%;
     }
+
     .container h2 {
         font-size: 20px;
     }
+
     .videos-section {
         padding: 20px 0;
         grid-template-columns: repeat(1, 1fr) !important;
         flex-direction: column !important;
         align-items: center !important;
     }
+
     .container {
         grid-template-columns: repeat(1, 1fr) !important;
         flex-direction: column !important;
         align-items: center !important;
 
     }
+
     .video-main {
         height: 300px !important;
         margin-right: 0 !important;
         align-items: center !important;
     }
+
     .video .video-info {
         display: none;
     }
-    @keyframes slide-animation{
+
+    @keyframes slide-animation {
         0% {
             transform: translateY(0);
         }
+
         0% {
             transform: translateY(0);
         }
     }
+
     .videos-container {
         display: flex;
         justify-content: flex-end;
@@ -1356,6 +1421,7 @@ img {
         position: relative;
         left: 335px;
     }
+
     .video-slider {
         overflow: auto;
         position: relative;
@@ -1376,67 +1442,76 @@ img {
         position: relative;
         left: 390px;
     }
-   .separador-ias{
-    height: auto;
-    width: 100%;
-    align-items: center;
-   }
-   .separador-ias h3{
-    position: relative;
-    font-size: 7px !important;
-    left: 2px;
-   }
-    .ia-container img{
-     height: 150px;
-     width: 250px;
-     margin-bottom: 10px;
-     object-fit: fill;
-     border-radius: 1rem;
-     transition: transform 0.3s ease;
-     transform-origin: center center;
+
+    .separador-ias {
+        height: auto;
+        width: 100%;
+        align-items: center;
     }
+
+    .separador-ias h3 {
+        position: relative;
+        font-size: 7px !important;
+        left: 2px;
+    }
+
+    .ia-container img {
+        height: 150px;
+        width: 250px;
+        margin-bottom: 10px;
+        object-fit: fill;
+        border-radius: 1rem;
+        transition: transform 0.3s ease;
+        transform-origin: center center;
+    }
+
     .ia-container {
         grid-template-columns: repeat(1, 1fr) !important;
         padding: 3px !important;
     }
+
     #cursos {
         margin: 2rem !important;
         padding: 60px !important;
         height: 300px !important;
 
     }
-    #cursos h2 p{
+
+    #cursos h2 p {
         justify-content: center;
         font-size: 15px !important;
         align-items: center;
     }
-    .carousel-caption h5 .carousel-caption p{
+
+    .carousel-caption h5 .carousel-caption p {
         display: none !important;
         font-size: 20px !important;
         width: 100% !important;
-        }
-        #cursos {
-            position: relative;
-            margin: 1rem !important;
-            padding: 15px !important;
-            max-width: 380px !important;
-            left: 393px;
-            
-        }
-    
-        #cursos h2 {
-            font-size: 10x !important;
-        }
-    
-        #cursos p {
-            font-size: 12px !important;
-        }
-        #cursos ul {
-            list-style: none;
-            padding: 0;
-            font-size: 12px;
-        }
-    
+    }
+
+    #cursos {
+        position: relative;
+        margin: 1rem !important;
+        padding: 15px !important;
+        max-width: 380px !important;
+        left: 393px;
+
+    }
+
+    #cursos h2 {
+        font-size: 10x !important;
+    }
+
+    #cursos p {
+        font-size: 12px !important;
+    }
+
+    #cursos ul {
+        list-style: none;
+        padding: 0;
+        font-size: 12px;
+    }
+
     #registro {
         position: relative;
         padding: 10px !important;
@@ -1444,6 +1519,7 @@ img {
         max-width: 400px;
         left: 400px;
     }
+
     #registro form button {
         width: 25%;
         background-color: #007bff;
@@ -1459,3 +1535,6 @@ img {
     }
 }
 
+.b_listado {
+    color: white;
+}
