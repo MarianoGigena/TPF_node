@@ -25,7 +25,8 @@ app.get('/', (req, res) => {
 app.get('/api/users', async (req, res) => {
     try {
         const connection = await pool.getConnection();
-        const sql = 'SELECT * FROM usuarios';
+        //const sql = 'SELECT * FROM usuarios';
+        const sql = 'SELECT  usuarios.*,  roles.rol FROM usuarios JOIN roles ON usuarios.rol_id = roles.id';
         const [rows, fields] = await connection.query(sql);
         connection.release();
         res.json(rows);
@@ -159,7 +160,30 @@ app.get('/', async (req, res) => {
     }
 });
 
-//
+//20240625
+app.get('/api/users/:id', async (req, res) => {
+    const userId = req.params.id;
+
+    try {
+        const connection = await pool.getConnection();
+        const sql = 'SELECT id, nombre, email, password, rol_id FROM usuarios WHERE id = ?';
+        const [rows, fields] = await connection.query(sql, [userId]);
+        connection.release();
+
+        if (rows.length === 0) {
+            res.status(404).send('Usuario no encontrado');
+            return;
+        }
+
+        res.json(rows[0]);
+    } catch (err) {
+        console.error('Hubo un error al consultar la base de datos:', err);
+        res.status(500).send('Hubo un error al consultar la base de datos');
+    }
+});
+
+
+
 // Ruta para servir el formulario de edición
 app.get('/users/update/:id', async (req, res) => {
     const userId = req.params.id;
@@ -195,7 +219,7 @@ app.get('/users/update/:id', async (req, res) => {
             <label for="password">Password:</label><br>
             <input type="password" id="password" name="password" value="${user.password}" required><br>
             <label for="rol">Rol:</label><br>
-            <input type="text" id="rol" name="rol" value="${user.rol}" required>
+            <input type="text" id="rol" name="rol" value="${user.rol_id}" required>
             <br><br>
             <button type="submit">Actualizar</button>
           </form>
@@ -212,8 +236,27 @@ app.get('/users/update/:id', async (req, res) => {
 });
 //
 
+//2024625 --actualizacion
+app.put('/update-user/:id', async (req, res) => {
+    const userId = req.params.id;
+    const { nombre, email, password, rol_id } = req.body;
+
+    try {
+        const connection = await pool.getConnection();
+        const sql = 'UPDATE usuarios SET nombre = ?, email = ?, password = ?, rol_id = ? WHERE id = ?';
+        await connection.query(sql, [nombre, email, password, rol_id, userId]);
+        connection.release();
+
+        res.status(200).send('Usuario actualizado exitosamente');
+    } catch (err) {
+        console.error('Hubo un error al actualizar el usuario en la base de datos:', err);
+        res.status(500).send('Hubo un error al actualizar el usuario en la base de datos');
+    }
+});
+//20240625
+
 // Ruta para manejar la actualización de un usuario
-app.post('/update-user/:id', async (req, res) => {
+/* app.post('/update-user/:id', async (req, res) => {
     const userId = req.params.id;
     const { nombre, email, password, rol } = req.body;
 
@@ -230,7 +273,7 @@ app.post('/update-user/:id', async (req, res) => {
         console.error('Hubo un error al actualizar el usuario en la base de datos:', err);
         res.status(500).send('Hubo un error al actualizar el usuario en la base de datos');
     }
-});
+}); */
 
 /*app.post('/users/update/:id', async (req, res) => {
     try {
@@ -254,7 +297,7 @@ app.post('/update-user/:id', async (req, res) => {
 });
 */
 
-app.get('/users/borrar/:id', async (req, res) => {
+app.delete('/users/borrar/:id', async (req, res) => { //cambio get por delete
 
     try {
         const connection = await pool.getConnection();

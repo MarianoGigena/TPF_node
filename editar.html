@@ -1,0 +1,67 @@
+<!-- public/editar_usuario.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Usuario</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div id="registro">
+        <h1>Editar Usuario</h1>
+        <form id="edit-form">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Contraseña:</label>
+            <input type="text" id="password" name="password" required>
+            <label for="rol_id">Rol:</label>
+            <!-- <input type="text" id="rol" name="rol" required> -->
+            <select id="rol_id" name="rol_id" required>
+                <option value="1">Admin</option>
+                <option value="2">Usuario</option>
+            </select>
+            <button type="submit">Actualizar</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            const userId = new URLSearchParams(window.location.search).get('id');
+            const response = await fetch(`/api/users/${userId}`);
+            const user = await response.json();
+
+            document.getElementById('nombre').value = user.nombre;
+            document.getElementById('email').value = user.email;
+            document.getElementById('password').value = user.password;
+            document.getElementById('rol_id').value = user.rol_id;
+
+            document.getElementById('edit-form').onsubmit = async function (event) {
+                event.preventDefault();
+                const data = {
+                    nombre: document.getElementById('nombre').value,
+                    email: document.getElementById('email').value,
+                    password: document.getElementById('password').value,
+                    rol_id: document.getElementById('rol_id').value//cambie rol por ro_id
+                };
+                const response = await fetch(`/update-user/${userId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+                if (response.ok) {
+                    window.location.href = '/users';
+                } else {
+                    alert('Hubo un error al actualizar el usuario');
+                }
+            };
+        });
+    </script>
+</body>
+
+</html>

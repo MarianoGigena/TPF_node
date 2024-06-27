@@ -18,8 +18,12 @@
             <input type="email" id="email" name="email" required><br>
             <label for="password">Contraseña:</label><br>
             <input type="password" id="password" name="password" required><br>
-            <label for="rol">Rol:</label><br>
-            <input type="text" id="rol" name="rol" required><br><br>
+            <label for="rol_id">Rol:</label><br>
+            <!-- <input type="number" id="rol_id" name="rol_id" required><br><br> -->
+            <select id="rol_id" name="rol_id" required>
+                <option value="1">Admin</option>
+                <option value="2">Usuario</option>
+            </select><br><br>
             <button type="submit">Registrar</button>
             <button><a href="/users">listado</a></button>
         </form>
