@@ -319,6 +319,30 @@ app.delete('/users/borrar/:id', async (req, res) => { //cambio get por delete
 
 });
 
+
+//// CURSOS API
+
+// Ruta para servir la página de la lista de CURSOS
+app.get('/api/cursos', (req, res) => {
+    res.sendFile(path.join(__dirname, 'cursos.html'));
+});
+
+// Ruta para obtener los datos de los usuarios en formato JSON
+app.get('/api/cursos2', async (req, res) => {
+    try {
+        const connection = await pool.getConnection();
+        //const sql = 'SELECT * FROM usuarios';
+        const sql = 'SELECT  cursos.*,  categoria.nivel FROM cursos JOIN categoria ON cursos.nivel_id = categoria.id';
+        const [rows, fields] = await connection.query(sql);
+        connection.release();
+        res.json(rows);
+    } catch (err) {
+        console.error('Hubo un error al consultar la base de datos:', err);
+        res.status(500).send('Hubo un error al consultar la base de datos');
+    }
+});
+
+
 app.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`);
 });

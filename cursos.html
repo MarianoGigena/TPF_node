@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de cursos</title>
+    <link rel="stylesheet" href="/tabla.css">
+</head>
+
+<body>
+    <h1 id="titulo-tabla">Lista de Cursos</h1>
+    <table id="cursos-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>nivel</th>
+                <th>imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Las filas de usuarios se cargarán aquí -->
+        </tbody>
+    </table>
+
+    <section>
+
+        <button><a href="/index.html">volver al inicio</a></button>
+    </section>
+
+    <script>
+        async function loadCursos() {
+            try {
+                const response = await fetch('/api/cursos2');
+                const cursos = await response.json();
+                const tbody = document.querySelector('#cursos-table tbody');
+
+                cursos.forEach(cursos => {
+                    const row = document.createElement('tr');
+
+                    row.innerHTML = `
+            <td>${cursos.id}</td>
+            <td>${cursos.nombre}</td>
+            <td>${cursos.descripcion}</td>
+            <td>${cursos.precio}</td>
+             <td>${cursos.nivel}</td>
+             <td><img src="/imagenes/ias/${cursos.imagen}" alt="Imagen de Ejemplo" width="100"></td>
+                     `;
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error al cargar los cursos:', error);
+            }
+        }
+
+        window.onload = loadCursos;
+    </script>
+</body>
+
+</html>

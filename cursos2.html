@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/css/cursos.css">
+    <link rel="icon" href="./imagenes/favicon/favicon.ico">
+    <title>Lista de Cursos</title>
+    <!-- Incluir Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Lista de Cursos</h1>
+        <div class="volver">
+            <button><a href="/index.html">volver al inicio</a></button>
+        </div>
+    </header>
+    <div class="container mt-5">
+        <div class="row" id="cursoContainer">
+            <!-- Las tarjetas de los cursos se cargarán aquí -->
+        </div>
+    </div>
+    <div class="volver">
+        <button><a href="/index.html">volver al inicio</a></button>
+    </div>
+
+    <!-- Incluir Bootstrap JS y dependencias -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Función para cargar los cursos
+        async function cargarCursos() {
+            const response = await fetch('/api/cursos2');
+            const cursos = await response.json();
+
+            const cursoContainer = document.getElementById('cursoContainer');
+            cursoContainer.innerHTML = '';
+
+            cursos.forEach(cursos => {
+                const cursoCard = `
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <img src="/imagenes/ias/${cursos.imagen}" class="card-img-top" alt="${cursos.nombre}">
+                            <div class="card-body">
+                                <h5 class="card-title">${cursos.nombre}</h5>
+                                <p class="card-text">${cursos.descripcion}</p>
+                                <p class="card-text">Nivel: ${cursos.nivel}</p>
+                                <p class="card-text">Precio: $ ${cursos.precio}</p>
+                                <button class="btn btn-primary" onclick="#">Comprar</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                cursoContainer.innerHTML += cursoCard;
+            });
+        }
+
+        // Cargar los cursos cuando la página esté lista
+        document.addEventListener('DOMContentLoaded', cargarCursos);
+    </script>
+</body>
+
+</html>
