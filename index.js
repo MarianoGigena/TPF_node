@@ -300,7 +300,7 @@ app.put('/update-user/:id', async (req, res) => {
 });
 */
 
-app.delete('/users/borrar/:id', async (req, res) => { //cambio get por delete
+app.get('/users/borrar/:id', async (req, res) => { //cambio get por delete
 
     try {
         const connection = await pool.getConnection();
